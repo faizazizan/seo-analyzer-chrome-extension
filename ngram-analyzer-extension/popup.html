@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Gram SEO Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+      <div style="
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 8px;
+            opacity: 0.6;
+        ">
+            Build by 
+            <a href="https://faizazizan.com" target="_blank" style="color: inherit; text-decoration: underline;">
+                Faiz Azizan
+            </a>
+        </div>
+    
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">N-Gram SEO Analyzer</h1>
+            <button id="analyzeBtn" class="btn-primary">Analyze Page</button>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Analyzing page content...</p>
+        </div>
+
+        <!-- Results Container -->
+        <div id="resultsContainer" class="hidden">
+            <!-- Alerts Section -->
+            <div id="alertsSection" class="alerts-section"></div>
+
+            <!-- Summary Section -->
+            <div class="card summary-card">
+                <h2 class="card-title">Content Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Words</span>
+                        <span id="totalWords" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Sentences</span>
+                        <span id="totalSentences" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Avg Sentence Length</span>
+                        <span id="avgSentenceLength" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Paragraphs</span>
+                        <span id="totalParagraphs" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Avg Paragraph Length</span>
+                        <span id="avgParagraphLength" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Internal Links</span>
+                        <span id="internalLinks" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">External Links</span>
+                        <span id="externalLinks" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Links</span>
+                        <span id="totalLinks" class="summary-value">-</span>
+                    </div>
+                </div>
+
+                <!-- HTML Elements -->
+                <div class="html-elements">
+                    <h3 class="subsection-title">HTML Elements</h3>
+                    <div class="elements-grid">
+                        <div class="element-item">
+                            <span class="element-label">H1 Tags</span>
+                            <span id="h1Count" class="element-value">-</span>
+                        </div>
+                        <div class="element-item">
+                            <span class="element-label">H2 Tags</span>
+                            <span id="h2Count" class="element-value">-</span>
+                        </div>
+                        <div class="element-item">
+                            <span class="element-label">H3 Tags</span>
+                            <span id="h3Count" class="element-value">-</span>
+                        </div>
+                        <div class="element-item">
+                            <span class="element-label">Strong/Bold</span>
+                            <span id="strongCount" class="element-value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Button -->
+            <div class="export-section">
+                <button id="exportBtn" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14 10v2.667A1.333 1.333 0 0112.667 14H3.333A1.333 1.333 0 012 12.667V10"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4.667 6.667L8 10l3.333-3.333M8 10V2" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Export CSV
+                </button>
+            </div>
+
+            <!-- N-Gram Sections -->
+            <div id="ngramSections"></div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="30" stroke="#E5E7EB" stroke-width="2" />
+                <path d="M32 20v24M20 32h24" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <p>Click "Analyze Page" to start analyzing the current webpage</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+
+  <div style="
+    font-size: 11px;
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0.6;
+">
+    Build by 
+    <a href="https://faizazizan.com" target="_blank" style="color: inherit; text-decoration: underline;">
+        Faiz Azizan
+    </a>
+</div>
+  
+</body>
+
+</html>
